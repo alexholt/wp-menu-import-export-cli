@@ -56,11 +56,6 @@ trait WPB_Menu_Import {
 			);
 			$menu_data_raw       = $this->$get_method( $menu_item, $menu_data_defaults );
 
-			if ( empty( $menu_data_raw ) ) {
-				WP_CLI::log( 'The submenu item "' . $menu_item['title'] . '" does not have any data.' );
-				continue;
-			}
-
 			$menu_data         = array_merge( $menu_data_defaults, $menu_data_raw );
 			$slug              = $menu_item['slug'];
 			$new_menu[ $slug ] = array();
